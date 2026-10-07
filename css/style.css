@@ -95,7 +95,7 @@ body {
 /* ---------- Hero ---------- */
 
 .hero {
-  padding: 5rem 1.5rem 4rem;
+  padding: 3.5rem 1.5rem 3rem;
   text-align: center;
 }
 
@@ -104,25 +104,28 @@ body {
 .hero-badge {
   display: inline-block;
   font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin: 0 0 1rem;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  font-weight: 500;
 }
 
 .hero-subtitle {
   color: var(--fg-muted);
-  font-size: 1.05rem;
-  margin: 0 0 2rem;
+  font-size: 1rem;
+  margin: 0 0 1.75rem;
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -130,7 +133,41 @@ body {
   gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 1.75rem;
+}
+
+/* 签名：用真实文本 + 手写体字形，比手绘 path 更清晰可读 */
+.hero-signature {
+  margin: 0 auto 1.75rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.sig-ink {
+  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand",
+               "Brush Script MT", cursive;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--fg);
+  opacity: 0.8;
+  transform: rotate(-1.5deg);
+  letter-spacing: 0.02em;
+}
+
+.sig-underline {
+  width: 96px;
+  height: 7px;
+  overflow: visible;
+}
+
+.sig-underline path {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.4;
 }
 
 .btn {
@@ -163,21 +200,21 @@ body {
   gap: 2.5rem;
   flex-wrap: wrap;
   margin: 0;
-  padding-top: 2rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--border);
 }
 
 .stat { text-align: center; }
 .stat dt {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--fg-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 .stat dd {
-  margin: 0.25rem 0 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg);
 }
 
 /* ---------- 区块 ---------- */
@@ -253,6 +290,10 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+.project-card:hover .project-name {
+  color: var(--accent);
+}
+
 .project-head {
   display: flex;
   align-items: baseline;
@@ -262,28 +303,29 @@ body {
 }
 
 .project-name {
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--fg);
   word-break: break-word;
 }
 
 .project-lang {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--fg-muted);
   border: 1px solid var(--border);
-  padding: 0.1rem 0.45rem;
-  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .project-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--fg-muted);
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.9rem;
   flex-grow: 1;
+  line-height: 1.6;
 }
 
 .project-tags {
@@ -320,30 +362,52 @@ body {
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
 }
 
+/* 无边框：靠留白与顶部细分隔线区分区块，呼应文字极简型参考 */
 .stack-card {
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
+  padding: 1.25rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
 }
 
 .stack-card h3 {
-  margin: 0 0 0.75rem;
-  font-size: 1rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  letter-spacing: 0.04em;
 }
 
 .stack-card ul {
   margin: 0;
-  padding-left: 1.1rem;
+  padding-left: 0;
+  list-style: none;
   font-size: 0.9rem;
   color: var(--fg-muted);
 }
 
-.stack-card li { margin-bottom: 0.4rem; }
-.stack-card strong { color: var(--fg); font-weight: 600; }
+.stack-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+/* 用 CSS 小圆点代替列表符号，比默认实心方块轻 */
+.stack-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 4px;
+  height: 1px;
+  background: var(--fg-muted);
+}
+
+.stack-card strong { color: var(--fg); font-weight: 500; }
 
 /* ---------- 联系 ---------- */
 
