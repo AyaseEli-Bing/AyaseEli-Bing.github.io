@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 · 页面不存在</title>
+  <style>
+    /* 404 页面被任意路径命中，用内联样式保证不依赖外部 CSS */
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", system-ui, sans-serif;
+      background: #ffffff;
+      color: #1f2328;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0d1117; color: #e6edf3; }
+    }
+    .code {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0969da;
+      line-height: 1;
+    }
+    h1 { font-size: 1.35rem; margin: 0.75rem 0 0.5rem; }
+    p { color: #59636e; margin: 0 0 1.75rem; font-size: 0.95rem; }
+    @media (prefers-color-scheme: dark) { p { color: #9198a1; } }
+    a {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      background: #0969da;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+    a:hover { background: #0a5cc4; }
+  </style>
+</head>
+<body>
+  <div>
+    <p class="code">404</p>
+    <h1>这个页面不存在</h1>
+    <p>链接可能已失效，或地址输入有误。</p>
+    <a href="./">返回首页</a>
+  </div>
+</body>
+</html>

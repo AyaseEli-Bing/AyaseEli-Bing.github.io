@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冰 · AyaseEli-Bing</title>
+  <meta name="description" content="冰的个人主页 —— macOS 工具、开源项目与技术笔记。">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-brand" href="#top">冰</a>
+      <div class="nav-links">
+        <a href="#projects">项目</a>
+        <a href="#stack">技术栈</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ========== Hero ========== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">AyaseEli-Bing</div>
+        <h1 class="hero-title">冰</h1>
+        <p class="hero-subtitle">
+          偏好零依赖、可离线、能跑在 macOS 上的小工具。<br>
+          在这里放一些自己写的项目和折腾记录。
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/AyaseEli-Bing" target="_blank" rel="noopener noreferrer">GitHub 主页</a>
+          <a class="btn btn-ghost" href="#projects">浏览项目</a>
+        </div>
+
+        <dl class="hero-stats">
+          <div class="stat">
+            <dt>原创项目</dt>
+            <dd id="stat-projects">15</dd>
+          </div>
+          <div class="stat">
+            <dt>主要语言</dt>
+            <dd>Swift · Python</dd>
+          </div>
+          <div class="stat">
+            <dt>运行依赖</dt>
+            <dd>尽可能为 0</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ========== 项目 ========== -->
+    <section id="projects" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">项目</h2>
+        <p class="section-desc">
+          以下均为原创项目。多数工具追求零运行时依赖、可离线运行。
+        </p>
+
+        <div class="filter-bar" role="group" aria-label="按语言筛选项目">
+          <button class="filter-btn is-active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="Swift">Swift</button>
+          <button class="filter-btn" data-filter="Python">Python</button>
+          <button class="filter-btn" data-filter="Shell">Shell</button>
+          <button class="filter-btn" data-filter="C">C</button>
+          <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- 卡片由 js/main.js 渲染；此处为无 JS 时的兜底提示 -->
+          <noscript>
+            <p class="noscript-note">
+              项目列表依赖 JavaScript 渲染。你可以直接浏览
+              <a href="https://github.com/AyaseEli-Bing?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub 仓库列表</a>。
+            </p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 技术栈 ========== -->
+    <section id="stack" class="section section-alt">
+      <div class="section-inner">
+        <h2 class="section-title">技术栈</h2>
+        <p class="section-desc">按熟练度与使用场景罗列，不追求全。</p>
+
+        <div class="stack-grid">
+          <article class="stack-card">
+            <h3>系统与命令行</h3>
+            <ul>
+              <li><strong>macOS</strong> — Apple Silicon 日常开发</li>
+              <li><strong>Swift</strong> — 菜单栏工具、原生应用</li>
+              <li><strong>Shell</strong> — 安装脚本、自检工具</li>
+              <li><strong>Homebrew / uv / nvm</strong> — 工具链管理</li>
+            </ul>
+          </article>
+
+          <article class="stack-card">
+            <h3>应用与后端</h3>
+            <ul>
+              <li><strong>Python</strong> — 标准库优先的实用脚本</li>
+              <li><strong>Node.js</strong> — 内置 SQLite + 原生 ESM</li>
+              <li><strong>C</strong> — 教学练习与跨平台 TUI</li>
+              <li><strong>Tauri v2</strong> — 轻量桌面应用</li>
+            </ul>
+          </article>
+
+          <article class="stack-card">
+            <h3>工程实践</h3>
+            <ul>
+              <li><strong>Conventional Commits</strong> — 提交信息规范化</li>
+              <li><strong>离线测试</strong> — 用 stub / fixture 替代真实请求</li>
+              <li><strong>最小化改动</strong> — 重构与功能分开提交</li>
+              <li><strong>安全优先脚本</strong> — 默认不删除，逐项确认</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 联系 ========== -->
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">联系</h2>
+        <p class="section-desc">
+          合作、问题反馈或指正，都欢迎通过 GitHub 发起。
+        </p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://github.com/AyaseEli-Bing" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@AyaseEli-Bing</span>
+          </a>
+          <a class="contact-link" href="https://github.com/AyaseEli-Bing?tab=repositories" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">全部仓库</span>
+            <span class="contact-value">24 个公开仓库</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>由 GitHub Pages 托管 · 内容仅供学习与自用</p>
+  </footer>
+
+  <script src="./js/projects.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

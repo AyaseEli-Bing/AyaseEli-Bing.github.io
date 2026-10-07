@@ -1,0 +1,410 @@
+/* ============================================================
+   冰的个人主页 · 样式表
+   资源路径统一用相对路径：即使将来把站点迁到子路径
+   （项目站 ayaseelibing.github.io/<repo>/），也不会出现 404。
+   ============================================================ */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f6f8fa;
+  --fg: #1f2328;
+  --fg-muted: #59636e;
+  --border: #d1d9e0;
+  --accent: #0969da;
+  --accent-soft: #ddf4ff;
+  --radius: 10px;
+  --maxw: 1080px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* 跟随系统深色模式 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --bg-alt: #151b23;
+    --fg: #e6edf3;
+    --fg-muted: #9198a1;
+    --border: #3d444d;
+    --accent: #4493f8;
+    --accent-soft: #121d2f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  /* 锚点跳转时给固定导航栏留出空间，避免标题被遮挡 */
+  scroll-padding-top: 4rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 导航 ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--fg);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero-inner { max-width: 720px; margin: 0 auto; }
+
+.hero-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { box-shadow: 0 4px 14px rgba(9, 105, 218, 0.3); }
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat { text-align: center; }
+.stat dt {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.stat dd {
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ---------- 区块 ---------- */
+
+.section { padding: 4rem 1.5rem; }
+.section-alt { background: var(--bg-alt); }
+
+.section-inner { max-width: var(--maxw); margin: 0 auto; }
+
+.section-title {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.section-desc {
+  color: var(--fg-muted);
+  margin: 0 0 2rem;
+  font-size: 0.98rem;
+}
+
+/* ---------- 筛选栏 ---------- */
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.filter-btn.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- 项目卡片 ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--accent);
+  word-break: break-word;
+}
+
+.project-lang {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  margin: 0 0 0.85rem;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  background: var(--bg-alt);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.project-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--fg-muted);
+  padding: 2.5rem 0;
+}
+
+.noscript-note {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--fg-muted);
+}
+
+/* ---------- 技术栈 ---------- */
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.stack-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.stack-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.stack-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.stack-card li { margin-bottom: 0.4rem; }
+.stack-card strong { color: var(--fg); font-weight: 600; }
+
+/* ---------- 联系 ---------- */
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.contact-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.contact-label {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-value {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+}
+
+/* ---------- 页脚 ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p { margin: 0; }
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 640px) {
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-stats { gap: 1.5rem; }
+  .section { padding: 3rem 1.25rem; }
+  .nav { padding: 0.75rem 1.25rem; }
+  .nav-links { gap: 1rem; }
+}
+
+/* ---------- 无障碍：尊重减少动效偏好 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
